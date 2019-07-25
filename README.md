@@ -31,8 +31,9 @@ Things you may want to cover:
 |password_confirmation  |string      |null:false                               |
 
 ### Association
-- has_many :groups, through :users_group
+- has_many :groups, through: :users_groups
 - has_many :messages
+  has_many :users_groups
 
 
 ## users_groupsテーブル
@@ -42,7 +43,8 @@ Things you may want to cover:
 |group_id  |integer   |                             |
 
 ### Association
-- belongs_to :user, :group
+- belongs_to :user
+  belongs_to :group
 
 ## groupsテーブル
 |Column    |Type      |Options                      |
@@ -52,6 +54,7 @@ Things you may want to cover:
 ### Association
 - has_many :users, through :users_groups
 - has_many :messages
+  has_many :users_groups
 
 ## messagesテーブル
 |Column    |Type      |Options                      |
