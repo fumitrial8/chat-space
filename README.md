@@ -23,12 +23,12 @@ Things you may want to cover:
 
 * ...
 ## usersテーブル
-|Column    |Type      |Options                      |
-|----------|----------|-----------------------------|
-|name      |string    |null:false, foreign_key: true|
-|email     |string    |null:false, unique:true      |
-|password  |string    |null:false                   |
-|image_id  |string    |                             |
+|Column                 |Type        |Options                                  |
+|-----------------------|------------|-----------------------------------------|
+|name                   |string      |index: true,null:false, foreign_key: true|
+|email                  |string      |null:false, unique:true                  |
+|password               |string      |null:false                               |
+|password_confirmation  |string      |null:false                               |
 
 ### Association
 - has_many :groups, through :users_group
@@ -56,8 +56,8 @@ Things you may want to cover:
 ## messagesテーブル
 |Column    |Type      |Options                      |
 |----------|----------|-----------------------------|
-|user_id   |integer   |null:false, foreign_key: true|
-|group_id  |integer   |null:false, foreign_key: true|
+|user_id   |integer   |null:false                   |
+|group_id  |integer   |null:false                   |
 |message   |text      |                             |
 |image     |string    |                             |
 
