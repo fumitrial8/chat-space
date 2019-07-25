@@ -25,7 +25,7 @@ Things you may want to cover:
 ## usersテーブル
 |Column                 |Type        |Options                                  |
 |-----------------------|------------|-----------------------------------------|
-|name                   |string      |index: true,null:false, foreign_key: true|
+|name                   |string      |index: true,null:false                   |
 |email                  |string      |null:false, unique:true                  |
 |password               |string      |null:false                               |
 |password_confirmation  |string      |null:false                               |
@@ -39,8 +39,8 @@ Things you may want to cover:
 ## users_groupsテーブル
 |Column    |Type      |Options                      |
 |----------|----------|-----------------------------|
-|user_id   |integer   |                             |
-|group_id  |integer   |                             |
+|user_id   |integer   |null:false, foreign_key: true|
+|group_id  |integer   |null:false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -49,7 +49,7 @@ Things you may want to cover:
 ## groupsテーブル
 |Column    |Type      |Options                      |
 |----------|----------|-----------------------------|
-|name      |string    |null:false, foreign_key: true|
+|name      |string    |null:false                   |
 
 ### Association
 - has_many :users, through :users_groups
@@ -59,8 +59,8 @@ Things you may want to cover:
 ## messagesテーブル
 |Column    |Type      |Options                      |
 |----------|----------|-----------------------------|
-|user_id   |integer   |null:false                   |
-|group_id  |integer   |null:false                   |
+|user_id   |integer   |null:false, foreign_key: true|
+|group_id  |integer   |null:false, foreign_key: true|
 |message   |text      |                             |
 |image     |string    |                             |
 
