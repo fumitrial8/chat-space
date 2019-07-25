@@ -42,7 +42,7 @@ Things you may want to cover:
 |group_id  |integer   |                             |
 
 ### Association
-- belongs_to :users, :messages
+- belongs_to :user, :group
 
 ## groupsテーブル
 |Column    |Type      |Options                      |
