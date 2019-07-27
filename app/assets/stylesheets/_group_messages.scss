@@ -5,20 +5,20 @@
   padding-top:20px;
   padding-bottom: 20px;
   padding-left: 40px;
-  .message-container-user{
+  & .message-container-user{
     display: inline-flex;
-    h1{
+    & h1{
       font-size: 16px;
        font-weight: bold;
       color: $font-color-message;      
       }
-    h2 {
+    & h2 {
       margin-left:10px;
       font-size: 12px;
       color: $font-color-time-stomp;
       }
   }
-  .message-container-text p{
+  & .message-container-text p{
     margin-top: 10px;
     font-size: 14px;
     color: $font-color-message;

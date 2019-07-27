@@ -20,7 +20,7 @@ header {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  .header__left{
+  & .header__left{
     background-color: $background-color-header-left;
     width:300px;
     display: flex;
@@ -29,18 +29,18 @@ header {
     padding-right: 20px;
     justify-content: space-between;
     align-items: center;
-    h1{
+    & h1{
       font-size: 16px;
       color: white;
     }
-    i{
+    & i{
       font-family: FontAwesome;
       font-style: normal;
       font-size: 16px;
       color: white;
     }
   }
-  .header__right {
+  & .header__right {
     width: calc(100% - 300px);
     padding-left: 40px;
     padding-right:40px;
@@ -49,19 +49,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .header__right__group{
+    & .header__right__group{
       margin-top:35px;
-      h1{
+      & h1{
         font-size:20px;
         color:$font-color-group;
       }
-      p{
+      & p{
         margin-top: 15px;
         font-size:12px;
         color: $font-color-time-stomp;
       }
     }
-    .edit-button{
+    & .edit-button{
       box-sizing: border-box;
       margin-top: 28px;
       height: 40px;
@@ -71,7 +71,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-      a{
+      & a{
         text-decoration: none;
         color: $background-color-alert;
       }
@@ -82,24 +82,24 @@ header {
   height: calc(100% - 180px);
   display: flex;
   width: 100%;
-  .content-left{
+  & .content-left{
     background-color: $background-color-group-index;
     width: 300px;
     height: 100%;
   }
-  .content-right{
+  & .content-right{
     background-color: $background-color-message;
     width:calc(100% - 300px);
     box-sizing: border-box;
     padding-top: 26px;
     height: 100%;
     position: relative;
-    .group-messages{
+    & .group-messages{
       height:calc(100% - 100px);
       width: 100%;
       box-sizing: border-box;
     }
-    .text-form{
+    & .text-form{
       width:100%;
       position: absolute;
       bottom: 0px;
@@ -111,31 +111,31 @@ header {
       box-sizing: border-box;
       padding-left:20px;
       padding-right:20px;
-      form{
+      & form{
         width:100%;
         position: relative;
-        .label{
+        & .label{
           cursor: pointer;
           font-size:18px;
           right: 140px;
           top: 10px;
           position: absolute;
         }
-        input[type="text"] {
+        & input[type="text"] {
           height: 50px;
           width:calc(100% - 130px);
           box-sizing: border-box;
         }
-        ::-webkit-input-placeholder{
+        & ::-webkit-input-placeholder{
           padding-left:10px;
           font-size: 16px;
           color:$font-color-message;
           font-style:normal;
         }
-        .image{
+        & .image{
           display: none;
         }
-        input[type="submit"] {
+        & input[type="submit"] {
           margin-left: 15px;
           box-sizing: border-box;
           background-color: $background-color-alert;
