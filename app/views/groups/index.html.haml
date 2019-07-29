@@ -1,10 +1,10 @@
 = render "/layouts/header"
 .contents
   .contents__left
-    = render partial: 'group'
+    = render partial: 'group_list'
   .contents__right
     .group-messages
-      = render partial: 'group_messages'
+      = render partial: '/messages/group_messages'
     .text-form
       = form_for(@message, url:"/") do |f|
         %label.label

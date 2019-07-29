@@ -8,9 +8,4 @@
       = link_to "/users/#{current_user.id}/edit" do
         %i.fas.fa-cog
   .header__right
-    .header__right__group
-      %h1 Group_name
-      %p 2019/07/26(Fri) 12:00:00
-    .edit-button
-      = link_to "#" do
-        Edit
+    = render ("/groups/header_group")
