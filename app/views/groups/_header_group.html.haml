@@ -1,6 +1,7 @@
--# .header__right__group
--#   %h1 Group_name
--#   %p 2019/07/26(Fri) 12:00:00
--# .edit-button
--#   = link_to "#" do
--#     Edit
+- if @group
+  .header__right__group
+    %h1 #{@group.name}
+    %p #{@group.created_at.strftime("%Y-%m-%d %H:%M")}
+  .edit-button
+    = link_to "#" do
+      Edit
