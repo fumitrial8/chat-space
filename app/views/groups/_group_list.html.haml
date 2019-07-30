@@ -2,4 +2,7 @@
   =link_to group_messages_path(group) do
     .group-box
       %h1 #{group.name}
-      %p まだメッセージはありません
+      -if group.messages.last
+        %p #{group.messages.last.text}
+      -else 
+        %p まだメッセージはありません。
