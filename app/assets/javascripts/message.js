@@ -1,32 +1,42 @@
 $(function() {
-  var messages_index = $(".message-container");
   function  appendMessage(message) {
-    var html = `.message-container-user
-                  %h1 ${message.user.name}
-                  %h2 ${message.created_at.strftime("%Y-%m-%d %H:%M")}
-                .message-container-text
-                  %p ${message.text}`
-    messages_index.append(html);
+    var image_html = `<img class='image' src=${message.image.url} alt ='Top'></img>`
+    var html = `<div class="message-container">
+                  <div class="message-container-user">
+                    <h1>${message.name}</h1>
+                    <h2> ${message.created_at}</h2>
+                  </div>
+                  <div class="message-container-text">
+                    <p> ${message.text}</p>
+                    ${message.image.url != null ? image_html : ""}
+                  </div>
+                </div>`;
+    return html;
   }
-
-  $('.text-form__submit__button').on('click', function(e){
-    e.preventDefault(e);
-    var text = $('.text-form__text').val();
-    var href = $("#new_message").attr('action');
+  $('#text_form').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    console.log(formData);
+    var href = $('#new_message').attr('action');
     $.ajax({
-      url: href,
       type: 'POST',
-      data: text,
+      url: href,
+      data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
-          })
+    })
     .done(function(data) {
-        console.log(data);
-        appendMessage(data);
+      var add_html = appendMessage(data);
+      $('.group-messages').prepend(add_html);
     })
     .fail(function() {
       alert("テキストを入力してください");
+    })
+    .always(function(){
+      $('.text-form__submit__button').removeAttr('disabled');
+      $('#message_text').val('');
+      $('#message_image').val('');
     })
   });
 });

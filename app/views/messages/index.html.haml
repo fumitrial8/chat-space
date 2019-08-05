@@ -6,9 +6,9 @@
     .group-messages
       = render partial: '/messages/group_messages'
     .text-form
-      = form_for [@group, @message], data: {remote: true} do |f|
+      = form_for [@group, @message],html: {id: "text_form"} do |f|
         %label.label
           = fa_icon"image"
-          = f.file_field :image, class: "image"
+          = f.file_field :image, class: "image text-form__image"
         = f.text_field :text, size: 100, placeholder: "Type a message" , class: "text-form__text"
         = f.submit "Send", class: "text-form__submit__button"
