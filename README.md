@@ -64,6 +64,7 @@ Things you may want to cover:
 |message   |text      |                             |
 |image     |string    |                             |
 
+
 ### Association
 - belongs_to :user
 - belongs_to :group

@@ -5,4 +5,6 @@
         %h1 #{message.user.name}
         %h2 #{message.created_at.strftime("%Y-%m-%d %H:%M")}
       .message-container-text
-        %p #{group.show_last_message}
+        %p #{message.text}
+      -if message.image.present?
+        =image_tag message.image.url, class: 'image'

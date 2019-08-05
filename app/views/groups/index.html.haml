@@ -2,14 +2,3 @@
 .contents
   .contents__left
     = render partial: 'group_list'
-  -#ここは必要ないかもしれない？
-  -# .contents__right
-  -#   .group-messages
-  -#     = render partial: '/messages/group_messages'
-  -#   .text-form
-  -#     = form_for(@message, url:"/groups/#{params[:id]}/messages") do |f|
-  -#       %label.label
-  -#         = fa_icon"image"
-  -#         = f.file_field :image, class: "image"
-  -#       = f.text_field :text, size: 100, placeholder: "Type a message" 
-  -#       = f.submit "Send"
