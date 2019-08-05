@@ -33,9 +33,8 @@ $(function() {
       alert("テキストを入力してください");
     })
     .always(function(){
+      $('#text_form')[0].reset();
       $('.text-form__submit__button').removeAttr('disabled');
-      $('#message_text').val('');
-      $('#message_image').val('');
     })
   });
 });
