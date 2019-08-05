@@ -16,7 +16,6 @@ $(function() {
   $('#text_form').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(formData);
     var href = $('#new_message').attr('action');
     $.ajax({
       type: 'POST',
