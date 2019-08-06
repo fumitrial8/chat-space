@@ -44,11 +44,11 @@ $(function(){
     $(document).on('click','.chat-group-user__btn--add', function(){
       var user_name_add = $(this).data('user-name');
       var user_id_add = $(this).data('user-id');
-      var appended_user = `　<div class='chat-group-user clearfix'>
-                              <input name='group[user_ids][]' type='hidden' value='${user_id_add}'>
-                              <p class='chat-group-user__name'>${user_name_add}</p>
-                              <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
-                            </div>`
+      var appended_user = `<div class='chat-group-user'>
+                            <input name='group[user_ids][]' type='hidden' value='${user_id_add}'>
+                            <p class='chat-group-user__name'>${user_name_add}</p>
+                            <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+                          </div>`
       group_users_list.append(appended_user);
       $(this).parent().remove();
     });
