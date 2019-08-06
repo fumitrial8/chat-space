@@ -21,22 +21,21 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
+    # @group = Group.find(params[:id])
     @users = @group.users
   end
 
   def update
     if @group.update(group_params)
-      redirect_to root_path, notice: "編集が成功しました"  
+      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
     else
-      render :edit, notice: "やり直し！！"  
+      render :edit
     end
   end
-
   private
 
   def group_params
-    params.require(:group).permit(:name, { :user_ids => @group.user_ids})
+    params.require(:group).permit(:name, { :user_ids => []})
   end
 
   def set_group
