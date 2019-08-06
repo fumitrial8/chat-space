@@ -29,14 +29,14 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to root_path, notice: "編集が成功しました"  
     else
-      render :edit
+      render :edit, notice: "やり直し！！"  
     end
   end
 
   private
 
   def group_params
-    params.require(:group).permit(:name, { :user_ids => []})
+    params.require(:group).permit(:name, { :user_ids => @group.user_ids})
   end
 
   def set_group
