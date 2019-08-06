@@ -2,7 +2,7 @@ $(function(){
   document.addEventListener("turbolinks:load", function() {
   
     var search_list = $('#user-search-result');
-    
+    var group_users_list = $('#chat-group-users');    
     function searchUser(user){
       var html = `<div class="chat-group-user clearfix">
                     <p class="chat-group-user__name">${user.name}</p>
@@ -40,11 +40,11 @@ $(function(){
         alert('ユーザーの検索に失敗しました')
       })
     });
+    
     $(document).on('click','.chat-group-user__btn--add', function(){
-      var user_name_add = $(this).attr('data-user-name');
-      var user_id_add = $(this).attr('data-user-id');
-      var group_users_list = $('#chat-group-users');
-      var appended_user = `　<div class='chat-group-user'>
+      var user_name_add = $(this).data('user-name');
+      var user_id_add = $(this).data('user-id');
+      var appended_user = `　<div class='chat-group-user clearfix'>
                               <input name='group[user_ids][]' type='hidden' value='${user_id_add}'>
                               <p class='chat-group-user__name'>${user_name_add}</p>
                               <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
@@ -52,6 +52,7 @@ $(function(){
       group_users_list.append(appended_user);
       $(this).parent().remove();
     });
+
     $(document).on('click', '.chat-group-user__btn--remove', function(){
       $(this).parent().remove();
     });
