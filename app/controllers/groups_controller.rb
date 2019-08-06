@@ -22,11 +22,12 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    @users = @group.users
   end
 
   def update
     if @group.update(group_params)
-      redirect_to root_path, notice: "グループを作成しました"  
+      redirect_to root_path, notice: "編集が成功しました"  
     else
       render :edit
     end
