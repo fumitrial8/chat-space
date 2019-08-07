@@ -1,6 +1,6 @@
 -if @messages
   -@messages.each do |message|
-    .message-container
+    .message-container{data: {message: {id: message.id, group:{id: message.group_id}}}}
       .message-container-user
         %h1 #{message.user.name}
         %h2 #{message.created_at.strftime("%Y-%m-%d %H:%M")}
