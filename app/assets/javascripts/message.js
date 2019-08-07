@@ -49,7 +49,7 @@ $(function() {
         var image_html = `<img class='image' src=${message.image.url} alt ='Top'></img>`
         var html = `<div class="message-container" data-message-group-id="${message.group_id}" data-message-id="${message.id} ">
                       <div class="message-container-user" >
-                        <h1>${message.name}</h1>
+                        <h1>${message.user_name}</h1>
                         <h2> ${message.created_at}</h2>
                       </div>
                       <div class="message-container-text">
@@ -83,7 +83,7 @@ $(function() {
           console.log('error');
         });
       };
-      setInterval(reloadMessages, 10000);
+      setInterval(reloadMessages, 5000);
       reloadMessages();
     } else {
       console.log('its not group message index page');
