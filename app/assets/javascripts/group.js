@@ -27,7 +27,7 @@ $(function(){
 
       .done(function(data){
         $("#user-search-result").empty();
-        if (data.lengh !== 0) {
+        if (data.length !== 0) {
           data.forEach(function(user){
             searchUser(user);
           });
