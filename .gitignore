@@ -18,3 +18,5 @@
 
 #投稿した画像はソースコードに関係ないのでコミットしない
 public/uploads/*
+
+config/secrets.yml
